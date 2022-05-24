@@ -1,0 +1,16 @@
+##java
+.mtj.tmp/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+
+
+##log file
+*.log
+
+##VS Code
+.vscode/
+.code-workspace
