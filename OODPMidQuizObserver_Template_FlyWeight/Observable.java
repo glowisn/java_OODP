@@ -1,10 +1,10 @@
 import java.util.Random;
 
-public class Observable {
+public class  {
     Random rd = new Random();
     int we;
 
-    public Observable(){
+    public (){
         //we = rd.nextInt(3);
     }
 
