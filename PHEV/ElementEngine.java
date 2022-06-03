@@ -6,7 +6,6 @@ public class ElementEngine implements Element, Observable{
 
     @Override
     public void accept(Visitor v) {
-        // TODO make print statement to complete the method
         ElementEngineStatus.createEngineStatus();
         v.visit(this);
         this.observer.update();
@@ -19,12 +18,6 @@ public class ElementEngine implements Element, Observable{
     @Override
     public void attach(Observer observer) {
         this.observer = observer;
-    }
-
-    @Override
-    public void detach(Observer observer) {
-        // TODO Auto-generated method stub
-        
     }
 
     public String getStatus(){

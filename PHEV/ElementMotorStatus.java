@@ -8,7 +8,7 @@ public class ElementMotorStatus {
         int num = random.nextInt(4);
         ElementMotorStatus.status = num;
     }
-    public static ElementMotorStatus createEngineStatus(){
+    public static ElementMotorStatus createMotorStatus(){
         if (theObject == null)
             theObject = new ElementMotorStatus();
         return theObject;

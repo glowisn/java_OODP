@@ -1,21 +1,24 @@
 public class ElementBrake implements Element, Observable{
+	Observer observer;
 
     @Override
     public void accept(Visitor v) {
-        // TODO Auto-generated method stub
-        
+        ElementBrakeStatus.createBrakeStatus();
+        v.visit(this);
+        this.observer.update(v);
     }
 
     @Override
     public void attach(Observer observer) {
-        // TODO Auto-generated method stub
-        
+        this.observer = observer; 
     }
 
-    @Override
-    public void detach(Observer observer) {
-        // TODO Auto-generated method stub
-        
+    public String brake() {
+		return "Brake System";
+	}
+
+    public String getStatus(){
+        return ElementBrakeStatus.getStatus();
     }
     
 }

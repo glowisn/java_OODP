@@ -1,6 +1,10 @@
 class ElementMotor implements Element, Observable {
+	Observer observer;
+
 	public void accept(Visitor v) {
-		v.visit(this);
+		ElementMotorStatus.createMotorStatus();
+        v.visit(this);
+        this.observer.update();
 	}
 
 	public String motor() {
@@ -9,14 +13,7 @@ class ElementMotor implements Element, Observable {
 
 	@Override
 	public void attach(Observer observer) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void detach(Observer observer) {
-		// TODO Auto-generated method stub
-		
+		this.observer = observer;
 	}
 
 	
