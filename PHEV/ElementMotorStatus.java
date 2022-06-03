@@ -1,10 +1,20 @@
+import java.util.Random;
+
 public class ElementMotorStatus {
     private static ElementMotorStatus theObject;
-    private ElementMotorStatus(){
+    private static int status;
+    private ElementMotorStatus(Random random){
+
     }
-    public static ElementMotorStatus createEngineStatus(){
+    public static ElementMotorStatus createEngineStatus(Random random){
         if (theObject == null)
-            theObject = new ElementMotorStatus();
+            theObject = new ElementMotorStatus(random);
         return theObject;
+    }
+    public static int getStatus(){
+        return status;
+    }
+    public String toString(){
+        return "[Status id=" + status + "]";
     }
 }
