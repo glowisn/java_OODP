@@ -4,7 +4,7 @@ class ElementMotor implements Element, Observable {
 	}
 
 	public String motor() {
-		return "Motor";
+		return "Electric Motor";
 	}
 
 	@Override
@@ -18,4 +18,9 @@ class ElementMotor implements Element, Observable {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
+	public int getStatus(){
+        return ElementMotorStatus.getStatus();
+    }
 }
