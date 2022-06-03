@@ -17,8 +17,8 @@ public class ElementBrake implements Element, Observable{
 		return "Brake System";
 	}
 
-    public String getStatus(){
-        return ElementBrakeStatus.getStatus();
+    public int getStatus(){
+        return ElementBrakeStatus.getStatusInt();
     }
     
 }

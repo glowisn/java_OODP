@@ -13,8 +13,8 @@ public class ElementMotorStatus {
             theObject = new ElementMotorStatus();
         return theObject;
     }
-    public static int getStatus(){
-        return status;
+    public static int getStatusInt(){
+        return ElementMotorStatus.status;
     }
     public String toString(){
         return "[Status id=" + status + "]";

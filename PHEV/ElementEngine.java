@@ -1,6 +1,3 @@
-import java.util.List;
-import java.util.ArrayList;
-
 public class ElementEngine implements Element, Observable{
 	Observer observer;
 
@@ -8,7 +5,7 @@ public class ElementEngine implements Element, Observable{
     public void accept(Visitor v) {
         ElementEngineStatus.createEngineStatus();
         v.visit(this);
-        this.observer.update();
+        this.observer.update(v);
     }
 
     public String engine() {
@@ -20,8 +17,8 @@ public class ElementEngine implements Element, Observable{
         this.observer = observer;
     }
 
-    public String getStatus(){
-        return ElementEngineStatus.getStatus();
+    public int getStatus(){
+        return ElementEngineStatus.getStatusInt();
     }
     
 }

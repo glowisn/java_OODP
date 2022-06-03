@@ -4,7 +4,7 @@ class ElementMotor implements Element, Observable {
 	public void accept(Visitor v) {
 		ElementMotorStatus.createMotorStatus();
         v.visit(this);
-        this.observer.update();
+        this.observer.update(v);
 	}
 
 	public String motor() {
@@ -18,6 +18,6 @@ class ElementMotor implements Element, Observable {
 
 	
 	public int getStatus(){
-        return ElementMotorStatus.getStatus();
+        return ElementMotorStatus.getStatusInt();
     }
 }
