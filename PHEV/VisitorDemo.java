@@ -32,7 +32,8 @@ class VisitorDemo {
 		// Make HTML file
 		HTMLBuilder htmlbuilder = new HTMLBuilder();
 		Director director = new Director(htmlbuilder);
-		director.construct(ElementEngineStatus.getStatusInt(),ElementMotorStatus.getStatusInt(),ElementBrakeStatus.getStatusInt());
+		director.construct(ElementEngineStatus.getStatusInt(), ElementMotorStatus.getStatusInt(),
+				ElementBrakeStatus.getStatusInt());
 		String filename = htmlbuilder.getResult();
 		System.out.println(filename + "is made.\n");
 
@@ -46,16 +47,70 @@ class VisitorDemo {
 			System.out.println("");
 		}
 
-		modeSelection(ElementEngineStatus.getStatusInt(),ElementMotorStatus.getStatusInt(),ElementBrakeStatus.getStatusInt());
+		modeSelection(ElementEngineStatus.getStatusInt(), ElementMotorStatus.getStatusInt(),
+				ElementBrakeStatus.getStatusInt());
 
 	}
 
 	private static void modeSelection(int engine, int motor, int brake) {
-		// TODO print status of elements
-		System.out.println(" Engine Status: " + engine);
-		// TODO print output
-		if(engine == 0 && motor != 0 && brake != 0){
-			System.out.println();
+		String engineString, motorString, brakeString;
+
+		// engine Status decider
+		if (engine == 0)
+			engineString = "OK";
+		else if (engine == 1)
+			engineString = "Oil";
+		else if (engine == 2)
+			engineString = "Irregular Power";
+		else if (engine == 3)
+			engineString = "Reduced Power";
+		else
+			engineString = "Error: Unreachble Code!";
+
+		// motor Status decider
+		if (motor == 0)
+			motorString = "OK";
+		else if (motor == 1)
+			motorString = "Reduced Motor Power";
+		else if (motor == 2)
+			motorString = "Irregular Motor Power";
+		else if (motor == 3)
+			motorString = "Vibrating Motor";
+		else
+			motorString = "Error: Unreachble Code!";
+
+		// brake Status decider
+		if (brake == 0)
+			brakeString = "OK";
+		else if (brake == 1)
+			brakeString = "Weak Electric";
+		else if (brake == 2)
+			brakeString = "No Electric";
+		else if (brake == 3)
+			brakeString = "Abnormal Speed Decrease";
+		else
+			brakeString = "Error: Unreachble Code!";
+
+		System.out.println(" Engine Status: " + engineString);
+		System.out.println(" Motor Status: " + motorString);
+		System.out.println(" Regernative Brake Status: " + brakeString);
+
+		if (engine == 0 && motor != 0 && brake != 0) {
+			System.out.println("Run with Engine Mode");
+		}else if(engine != 0 && motor == 0 && brake ==0){
+			System.out.println("Run with Electric Mode");
+		}else if(engine == 0 && motor == 0 && brake ==0){
+			System.out.println("Run with Electric Mode");
+		}else if(engine == 0 && motor == 0){
+			System.out.println("Run with Hybrid Mode");
+		}else if(engine == 3 && motor == 3 && brake == 3){
+			System.out.println("Stop");
+		}else if(engine == 0){
+			System.out.println("Engine Running with Slow-Down");
+		}else if(motor == 0){
+			System.out.println("Motor Running with Slow-Down");
+		}else{
+			System.out.println("Engine Running with Slow-Down");
 		}
 	}
 }
