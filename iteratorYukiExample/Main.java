@@ -11,6 +11,7 @@ public class Main {
         bookShelf.appendBook(new Book("Frankenstein"));
         bookShelf.appendBook(new Book("Gulliver's Travels"));
         bookShelf.appendBook(new Book("Hamlet"));
+        //Iterator is uniform interface
         Iterator it = bookShelf.iterator();
         while (it.hasNext()) {
             Book book = (Book)it.next();
